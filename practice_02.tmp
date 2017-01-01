@@ -1,0 +1,27 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.6</VERSION>
+ <DEVICE>"ATmega32"</DEVICE>
+ <WORKING_DIR>c:\users\salor-pc\Documents\Atmel Studio\practice_02\practice_02\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>D:/atmel\install\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc</DIR>
+  <DIR>D:\atmel\install\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>c:\users\salor-pc\Documents\Atmel Studio\practice_02\practice_02\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>D:/atmel\install\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc\m32def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>c:\users\salor-pc\Documents\Atmel Studio\practice_02\practice_02\Debug\practice_02.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>practice_02.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>practice_02.map</FILE>
+  <FILE>practice_02.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <START><FILE>c:\users\salor-pc\Documents\Atmel Studio\practice_02\practice_02\main.asm</FILE><LINE>6</LINE></START>
+ </LABELS>
+</ASSEMBLER_INFO>
