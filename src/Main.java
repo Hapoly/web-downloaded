@@ -48,4 +48,11 @@ public class Main {
 
 	}
 
+	public void newChatEvent(String username) {
+
+	}
+
+	public void friendList(String username) {
+
+	}
 }

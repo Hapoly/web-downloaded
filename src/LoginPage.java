@@ -29,10 +29,10 @@ public class LoginPage extends JFrame {
 		numbersLabel = new JLabel("numbers: ");
 		numbersLabel.setBounds(20, 180, 100, 30);
 		add(numbersLabel);
-		username = new JTextField();
+		username = new JTextField("sadaf");
 		username.setBounds(20,50, 100, 30);
 		add(username);
-		password = new JTextField();
+		password = new JTextField("1234");
 		password.setBounds(20, 130, 100, 30);
 		add(password);
 		numbers = new JTextField();
