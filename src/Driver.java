@@ -24,6 +24,7 @@ public class Driver {
 			System.exit(0);
 		}
 	}
+	
 
 	void insertUser(String username, String password) throws SQLException {
 		String sql = "INSERT INTO users (username,password) VALUES('" + username + "','" + password + "')";
@@ -63,10 +64,10 @@ public class Driver {
 		stmt.executeUpdate(sql);
 
 	}
-
-	void sendMessage(String chatTitle, String message, String username) throws SQLException {
-		String sql = "INSERT INTO messages (chat_title,message,username) VALUES ('" + chatTitle + "','" + message
-				+ "','" + username + "')";
+	//changed
+	void sendMessage(String chatTitle, String message, String number) throws SQLException {
+		String sql = "INSERT INTO messages (chat_title,message,number) VALUES ('" + chatTitle + "','" + message
+				+ "','" + number + "')";
 		stmt.executeUpdate(sql);
 
 	}
@@ -76,7 +77,7 @@ public class Driver {
 				"SELECT * FROM users WHERE username = '" + username + "' and password = '" + password + "'");
 		return rs.next();
 	}
-
+//
 	SadafArray<String> getFriends(String username, int dpt) throws SQLException {
 		SadafArray<String> friendList = new SadafArray<>();
 		if (dpt == 1) {
@@ -84,7 +85,7 @@ public class Driver {
 					"SELECT * fROM friends WHERE username_1='" + username + "' or username_2='" + username + "'");
 			System.out.println(
 					"SELECT * fROM friends WHERE username_1='" + username + "' or username_2='" + username + "'");
-			while (rs.next()) {
+			while (rs.next()) {//
 				if (username.equals(rs.getString("username_1"))) {
 					friendList.add(rs.getString("username_2"));
 				} else if (username.equals(rs.getString("username_2"))) {
@@ -107,7 +108,9 @@ public class Driver {
 		return friendList;
 
 	}
-
+	
+	
+	//return reciever_names
 	SadafArray<String> getSentRequests(String username) throws SQLException {
 		SadafArray<String> send = new SadafArray<>();
 		ResultSet rs = stmt.executeQuery("SELECT * fROM requests WHERE sender_username='" + username + "'");
@@ -117,7 +120,9 @@ public class Driver {
 		}
 		return send;
 	}
-
+	
+	
+	//return sender_usernames
 	SadafArray<String> getRecievedRequests(String username) throws SQLException {
 
 		SadafArray<String> recieve = new SadafArray<>();
@@ -139,7 +144,7 @@ public class Driver {
 		return chat_name;
 	}
 
-	SadafArray<String> getMessages(String chatTitle) throws SQLException {
+	SadafArray<String> getMessages(String chatTitle) throws SQLException {//
 		SadafArray<String> chat_name = new SadafArray<>();
 		ResultSet rs = stmt.executeQuery("SELECT * fROM chats WHERE chat_title='" + chatTitle + "'");
 		while (rs.next()) {

@@ -1,6 +1,7 @@
 import java.awt.Desktop.Action;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -29,13 +30,13 @@ public class LoginPage extends JFrame {
 		numbersLabel.setBounds(20, 180, 100, 30);
 		add(numbersLabel);
 		username = new JTextField();
-		username.setBounds(20, 50, 100, 30);
+		username.setBounds(20,50, 100, 30);
 		add(username);
 		password = new JTextField();
-		password.setBounds(20, 140, 100, 30);
+		password.setBounds(20, 130, 100, 30);
 		add(password);
 		numbers = new JTextField();
-		numbers.setBounds(20, 220, 100, 30);
+		numbers.setBounds(20, 210, 100, 30);
 		add(numbers);
 
 		loginBTN = new JButton("login");
@@ -56,7 +57,12 @@ public class LoginPage extends JFrame {
 		registerBTN.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				programm.registerEvent(username.getText(), password.getText(), numbers.getText().split(","));
+				try {
+					programm.registerEvent(username.getText(), password.getText(), numbers.getText().split(","));
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 	}

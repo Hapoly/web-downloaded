@@ -42,7 +42,7 @@ public class SadafArray<T> {
 		size++;
 	}
 
-	public void merg(SadafArray<T> a) {
+	public void merg(SadafArray<T> a) {//
 		for (int i = 0; i < a.size; i++)
 			this.add(a.get(i));
 	}

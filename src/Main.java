@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class Main {
-	private static Main programm = new Main();
+	private static Main programm = new Main();//
 	private static LoginPage loginPage;
 	private static MainPage mainPage;
 
@@ -32,14 +32,20 @@ public class Main {
 		}
 	}
 
-	public void registerEvent(String username, String password, String[] numbers) {
+	public void registerEvent(String username, String password, String[] numbers) throws SQLException {
 		System.out.println("wanna register by " + username + " , " + password);
-		for (String number : numbers)
+		driver.insertUser(username, password);
+		for (String number : numbers) {
 			System.out.println(number);
+			driver.insertNumber(username, number);
+		}
+		mainPage = new MainPage(programm, username);
+		loginPage.dispose();
+		mainPage.show();
 	}
 
 	public void requestSendEvent(String username) {
 
 	}
-	
+
 }
