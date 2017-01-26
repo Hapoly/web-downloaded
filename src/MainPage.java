@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JTextArea;
 import javax.swing.ListModel;
@@ -14,6 +15,7 @@ import javax.swing.event.ListSelectionListener;
 
 public class MainPage extends JFrame {
 	private JButton initChat, sendRequest, friends;
+	private JLabel chats,messages,friend;
 	private JList<String> chatList, messagesList, friendList;
 	private DefaultListModel<String> chatListModel;
 
@@ -40,17 +42,29 @@ public class MainPage extends JFrame {
 		friends = new JButton("friends");
 		friends.setBounds(250, 400, 110, 50);
 		add(friends);
-
+		
+		chats=new JLabel("chats");
+		chats.setBounds(20,10,50,20);
+		add(chats);
+		
 		chatList = new JList<>();
-		chatList.setBounds(20, 20, 120, 350);
+		chatList.setBounds(20, 30, 120, 350);
 		add(chatList);
+		
+		messages=new JLabel("messages");
+		messages.setBounds(160,10,70,20);
+		add(messages);
 
 		messagesList = new JList<>();
-		messagesList.setBounds(160, 20, 200, 350);
+		messagesList.setBounds(160, 30, 200, 350);
 		add(messagesList);
+		
+		friend=new JLabel("friends");
+		friend.setBounds(380,10,50,20);
+		add(friend);
 
 		friendList = new JList<>();
-		friendList.setBounds(380, 20, 200, 350);
+		friendList.setBounds(380, 30, 200, 350);
 		add(friendList);
 
 		this.username = username;
