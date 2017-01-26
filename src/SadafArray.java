@@ -19,7 +19,7 @@ public class SadafArray<T> {
 		if (tail == null)
 			return result;
 		while (tail.next != null) {
-			result += (tail.value) + "\n";
+			result += (tail.value) + " | ";
 			tail = tail.next;
 		}
 		result += (tail.value);
@@ -44,7 +44,8 @@ public class SadafArray<T> {
 
 	public void merg(SadafArray<T> a) {//
 		for (int i = 0; i < a.size; i++)
-			this.add(a.get(i));
+			if (!contains(a.get(i)))
+				this.add(a.get(i));
 	}
 
 	public int getSize() {
@@ -54,6 +55,14 @@ public class SadafArray<T> {
 	private class Node {
 		public T value;
 		public Node next;
+	}
+
+	public boolean contains(T t) {
+		for (int i = 0; i < size; i++)
+			if (t.equals(get(i)))
+				return true;
+		return false;
+
 	}
 
 }

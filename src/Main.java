@@ -45,14 +45,17 @@ public class Main {
 	}
 
 	public void requestSendEvent(String username) {
+		SendRequestPanel sendRequestPanel = new SendRequestPanel(username, this);
+		sendRequestPanel.show();
+	}
 
+	public void gotRequestsEvent(String username) {
+		GotRequestPanel gotRequestPanel = new GotRequestPanel(username, this);
+		gotRequestPanel.show();
 	}
 
 	public void newChatEvent(String username) {
-
-	}
-
-	public void friendList(String username) {
-
+		NewChat newChat = new NewChat(username, this);
+		newChat.show();
 	}
 }
